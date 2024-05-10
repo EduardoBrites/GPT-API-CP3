@@ -1,0 +1,49 @@
+@use "mixins";
+@use "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: variables.$default-bg;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    background-color: variables.$default-bg;
+    display: flex;
+    .left{
+        background-color: variables.$default-bg-secondary;
+        width: 16.9%;
+        .menu{
+            background-color: variables.$inner-default-bg-secondary;
+            border-top-left-radius: 28px;
+            border-bottom-left-radius: 28px;
+            width: 82%;
+            height: 86%;
+            margin-left: 18%;
+            margin-top: 20%;
+            nav{
+                ul{
+                    li{
+                        list-style: none;
+                        background-color: variables.$main-button-color;
+                        display: flex;
+                        text-align: center;
+                        align-items: center;
+                        border-radius: 20px;
+                        padding: 10% 20% 10% 20%;
+                        width: 50%;
+                        margin: 10% 0 0 10%;
+                        a{
+                            color: variables.$main-button-text;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
