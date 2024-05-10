@@ -50,5 +50,34 @@
         </div>
     </div> -->
 
+    <script>
+        const messages = [];
+
+        const form = document.querySelector("form");
+        const message = document.getElementById("message");
+        const chatlog = document.getElementById("chat-log");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const messageText = message.value;
+
+            //Na linha abaixo se for usado o GEMNI a estrutura irá mudar
+            const newMessageAPI = {"role": "user", "content": `${messageText}`};
+            messages.push(newMessageAPI);
+
+            message.value = "";
+
+            const messageElementDiv = documento.createElement("div");
+            messageElementDiv.classList.add("message");
+            messageElementDiv.classList.add("message--sent");
+            messageElementDiv.innerHTML = `
+                <div class="message__text">${messageText}</div>
+            `;
+
+            chatlog.appendChild(messageElementDiv);
+        });
+    </script>
+
 </body>
 </html>
